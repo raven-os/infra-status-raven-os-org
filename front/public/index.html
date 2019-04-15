@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="/img/raven_ico.ico" rel="icon">
+  <link href="img/raven_ico.ico" rel="icon">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -28,18 +28,49 @@
     ============================-->
     <header id="header">
       <div class="container">
-        <b-navbar class="app-navbar" toggleable="md" type="dark">
-          <b-navbar-toggle target="nav_collapse" />
-          <b-navbar-brand to="/"><img src="img/raven_title.png"></b-navbar-brand>
-          <b-collapse id="nav_collapse" is-nav />
-        </b-navbar>
+        <navbar class="app-navbar" toggleable="md" type="dark">
+          <navbar-toggle target="nav_collapse" />
+          <navbar-brand to="/"><img src="img/raven_title.png"></navbar-brand>
+          <collapse id="nav_collapse" is-nav />
+        </navbar>
         <!-- #nav-menu-container -->
       </div>
     </header>
     <!-- #header -->
 
     <div class="content">
-      <h1>TITLE</h1>
+      <h1>Infrastructure status</h1>
+      <section id="infra-list">
+        <div class="container">
+          <div class="container red-line">
+            <h2>Services available</h2>
+          </div>
+          <div class="row">
+            <div class="col">
+              Raven-OS Website
+            </div>
+            <div class="col">
+              Status
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              Stable
+            </div>
+            <div class="col">
+              Status
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              Docs
+            </div>
+            <div class="col">
+              Status
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!--==========================
@@ -64,6 +95,7 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script src="../src/main.js"></script>
 </body>
 
 </html>
