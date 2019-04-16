@@ -11,12 +11,12 @@
   </div>
   <div class="row status-list">
     <div class="col-lg-8 col-md-10 mx-auto">
-        @each(site in status)
+        @each(site in data)
         <div class="status-preview container">
           <div class="row">
             <div class="col">
                 <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
-                <span class="status-site-name">
+                <span class="status-site-name mw-2">
                   {{ site.hostname }}
                 </span>
             </div>

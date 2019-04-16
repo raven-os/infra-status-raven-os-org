@@ -1,28 +1,40 @@
 const express = require('express');
 const expressEdge = require('express-edge');
-const sc = require('status-check');
-const url = require('url');
+const sc = require('./controllers/status-check-override');
 
 const app = express();
 app.use(express.static('public'));
 app.use(expressEdge);
 app.set('views', `${__dirname}/views`);
 
-app.get('/', (request, response) => {
-    sc.testLinkStatus("infra.csv", function (data) {
-    //console.log(JSON.stringify(data));
-    const status = data;
-    for (i = 0; i < status.length; ++i) {
-      var url = new URL(status[i].url);
-      status[i]["hostname"] = url.hostname;
+function checkStatus(callback) {
+  sc.testLinkStatus("infra.csv", function (data) {
+    for (i = 0; i < data.length; ++i) {
+      var url = new URL(data[i].url);
+      data[i]["hostname"] = url.hostname;
     }
-    console.log(JSON.stringify(status));
+    console.log(JSON.stringify(data));
+    return callback(data);
+  });
+}
+
+app.get('/', (request, response) => {
+  checkStatus(function (data) {
     response.render('index', {
-      status
+      data
     });
-  }, true);
+  })
 });
 
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+/*process.on('uncaughtException', (err) => {
+  console.error('There was an uncaught error', err)
+  process.exit(1) //mandatory (as per the Node docs)
+})*/
 
 
 app.listen(3000, () => {
