@@ -122,22 +122,14 @@ h1 {
   font-size: 2rem;
 }
 
-.status-list {
-  margin-top: 50px;
+h3 {
+  font-size: 1.5rem;
 }
 
-.status-preview {
-  padding: 5px;
-  margin-top: 10px;
-  border-bottom: 1px solid var(--accent);
-}
-
-.status-site-name {
-/*  margin-left: 20px;*/
-}
-
-.status-symbol {
-  text-align: right;
+@media (max-width: 800px) {
+  h3 {
+    margin-top: 50px;
+  }
 }
 
 .status-color-ok {
@@ -146,4 +138,14 @@ h1 {
 
 .status-color-nok {
   color: #d36a59;
+}
+
+.disabled-link {
+  color: var(--primary-dark) !important;
+  pointer-events: none;
+  cursor: default;
+}
+.disabled-link:hover {
+  color: var(--primary-dark) !important;
+  cursor: default;
 }

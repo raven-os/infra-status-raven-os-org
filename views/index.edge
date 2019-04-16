@@ -9,31 +9,138 @@
       <h1>Raven infrastructure status</h1>
     </div>
   </div>
-  <div class="row status-list">
-    <div class="col-lg-8 col-md-10 mx-auto">
-        @each(site in data)
-        <div class="status-preview container">
-          <div class="row">
-            <div class="col">
+  <div class="row my-4">
+    <div class="col-lg-4">
+      <h3>Community</h3>
+      <ul class="list-group">
+        @each(site in community)
+        @if(site.statusCode != -1)
+        <li class="list-group-item">
+          <div class="container">
+            <div class="row">
+              <div class="col">
                 <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
-                <span class="status-site-name mw-2">
-                  {{ site.hostname }}
-                </span>
-            </div>
-            <div class="col status-symbol">
-              @if(site.statusCode == 200)
-                <span class="status-color-ok">
-                  <i class="fas fa-check-square"></i>
-                </span>
-              @else
-                <span class="status-color-nok">
-                  <i class="fas fa-times"></i>
-                </span>
-              @endif
+                <span class="ml-3">{{ site.hostname }}</span>
+              </div>
+              <div class="col-1">
+                @if(site.statusCode == 200)
+                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                @else
+                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                @endif
+              </div>
             </div>
           </div>
-        </div>
-      @endeach
+        </li>
+        @else
+        <li class="list-group-item disabled">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <a href="{{ site.url }}" class="disabled-link"><i class="fas fa-link"></i></a>
+                <span class="ml-3">{{ site.hostname }}</span>
+              </div>
+              <div class="col-1">
+                @if(site.statusCode == 200)
+                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                @else
+                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                @endif
+              </div>
+            </div>
+          </div>
+        </li>
+        @endif
+        @endeach
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <h3>Nest repositories</h3>
+      <ul class="list-group">
+        @each(site in nest)
+        @if(site.statusCode != -1)
+        <li class="list-group-item">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
+                <span class="ml-3">{{ site.hostname }}</span>
+              </div>
+              <div class="col-1">
+                @if(site.statusCode == 200)
+                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                @else
+                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                @endif
+              </div>
+            </div>
+          </div>
+        </li>
+        @else
+        <li class="list-group-item disabled">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <a href="{{ site.url }}" class="disabled-link"><i class="fas fa-link"></i></a>
+                <span class="ml-3">{{ site.hostname }}</span>
+              </div>
+              <div class="col-1">
+                @if(site.statusCode == 200)
+                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                @else
+                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                @endif
+              </div>
+            </div>
+          </div>
+        </li>
+        @endif
+        @endeach
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <h3>Development</h3>
+      <ul class="list-group">
+        @each(site in dev)
+        @if(site.statusCode != -1)
+        <li class="list-group-item">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
+                <span class="ml-3">{{ site.hostname }}</span>
+              </div>
+              <div class="col-1">
+                @if(site.statusCode == 200)
+                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                @else
+                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                @endif
+              </div>
+            </div>
+          </div>
+        </li>
+        @else
+        <li class="list-group-item disabled">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <a href="{{ site.url }}" class="disabled-link"><i class="fas fa-link"></i></a>
+                <span class="ml-3">{{ site.hostname }}</span>
+              </div>
+              <div class="col-1">
+                @if(site.statusCode == 200)
+                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                @else
+                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                @endif
+              </div>
+            </div>
+          </div>
+        </li>
+        @endif
+        @endeach
+      </ul>
     </div>
   </div>
 </div>
