@@ -1,0 +1,21 @@
+{
+  "name": "infrastatus",
+  "version": "1.0.0",
+  "description": "Infrastructure status for Raven-OS services.",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raven-os/infra-status-raven-os-org.git"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-edge": "^1.0.0",
+    "status-check": "0.0.17"
+  }
+}

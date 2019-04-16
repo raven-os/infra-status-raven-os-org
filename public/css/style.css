@@ -28,7 +28,7 @@ a {
 }
 
 a:hover, a:active, a:focus {
-  color: var(--white) !important;
+  color: var(--primary-dark) !important;
   outline: none;
   text-decoration: none !important;
 }
@@ -44,12 +44,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px 0;
   padding: 0;
   color: var(--primary-dark);
-}
-
-h1 {
-  text-align: center;
-  font-size: 45px;
-  margin-top: 200px;
 }
 
 /* -----------------------------------
@@ -121,10 +115,35 @@ h1 {
 /* -----------------------------------
   Content
 ----------------------------------- */
-#infra-list {
-  margin-top: 100px;
+
+h1 {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 2rem;
 }
 
-.red-line {
+.status-list {
+  margin-top: 50px;
+}
+
+.status-preview {
+  padding: 5px;
+  margin-top: 10px;
   border-bottom: 1px solid var(--accent);
+}
+
+.status-site-name {
+  margin-left: 20px;
+}
+
+.status-symbol {
+  text-align: right;
+}
+
+.status-color-ok {
+  color: green;
+}
+
+.status-color-nok {
+  color: red;
 }

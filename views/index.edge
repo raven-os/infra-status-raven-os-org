@@ -1,0 +1,41 @@
+@layout('layouts.app')
+
+@section('content')
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Raven infrastructure status</h1>
+    </div>
+  </div>
+  <div class="row status-list">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        @each(site in status)
+        <div class="status-preview container">
+          <div class="row">
+            <div class="col">
+                <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
+                <span class="status-site-name">
+                  {{ site.hostname }}
+                </span>
+            </div>
+            <div class="col status-symbol">
+              @if(site.statusCode == 200)
+                <span class="status-color-ok">
+                  <i class="fas fa-check-square"></i>
+                </span>
+              @else
+                <span class="status-color-nok">
+                  <i class="fas fa-times"></i>
+                </span>
+              @endif
+            </div>
+          </div>
+        </div>
+      @endeach
+    </div>
+  </div>
+</div>
+
+@endsection
