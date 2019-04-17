@@ -4,9 +4,12 @@
 
 :root {
   --accent: #ed254e;
+  --light-accent: #ed4d6e;
   --primary: #f7f4f8;
   --white: #ffffff;
-  --primary-dark: #343432;
+  --light-grey: #eee;
+  --mid-grey: #e2e2e2;
+  --primary-dark: #343a40;
 }
 
 body {
@@ -136,6 +139,10 @@ h3 {
   color: #a1cf6b;
 }
 
+.status-color-mok {
+  color: grey;
+}
+
 .status-color-nok {
   color: #d36a59;
 }
@@ -145,7 +152,38 @@ h3 {
   pointer-events: none;
   cursor: default;
 }
+
 .disabled-link:hover {
   color: var(--primary-dark) !important;
   cursor: default;
+}
+
+.bg-light-accent-hover:hover {
+  background-color: var(--light-accent) !important;
+  color: var(--white);
+}
+
+.disabled {
+  background-color: var(--mid-grey) !important;
+}
+
+.list-disabled-padding {
+  padding: 10px 15px;
+}
+
+.list-group-item {
+  padding: 0px !important;
+}
+
+.list-group-item a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--primary-dark);
+  padding: 10px 15px;
+}
+
+.list-group-item a:hover {
+  color: var(--white) !important;
 }

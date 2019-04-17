@@ -9,36 +9,23 @@
       <h1>Raven infrastructure status</h1>
     </div>
   </div>
-  <div class="row my-4">
+  <div class="row mt-5">
     <div class="col-lg-4">
       <h3>Community</h3>
       <ul class="list-group">
         @each(site in community)
         @if(site.statusCode != -1)
-        <li class="list-group-item">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
-                <span class="ml-3">{{ site.hostname }}</span>
-              </div>
-              <div class="col-1">
-                @if(site.statusCode == 200)
-                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
-                @else
-                <span class="status-color-nok"><i class="fas fa-times"></i></span>
-                @endif
-              </div>
-            </div>
-          </div>
-        </li>
+        <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+          title="The service is running normally.">
+          <a href="{{ site.url }}" target="_blank">
         @else
-        <li class="list-group-item disabled">
+        <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
+          <div class="list-disabled-padding">
+        @endif
           <div class="container">
             <div class="row">
               <div class="col">
-                <a href="{{ site.url }}" class="disabled-link"><i class="fas fa-link"></i></a>
-                <span class="ml-3">{{ site.hostname }}</span>
+                {{ site.hostname }}
               </div>
               <div class="col-1">
                 @if(site.statusCode == 200)
@@ -49,8 +36,12 @@
               </div>
             </div>
           </div>
+          @if(site.statusCode != -1)
+          </a>
+          @else
+          </div>
+          @endif
         </li>
-        @endif
         @endeach
       </ul>
     </div>
@@ -59,30 +50,17 @@
       <ul class="list-group">
         @each(site in nest)
         @if(site.statusCode != -1)
-        <li class="list-group-item">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
-                <span class="ml-3">{{ site.hostname }}</span>
-              </div>
-              <div class="col-1">
-                @if(site.statusCode == 200)
-                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
-                @else
-                <span class="status-color-nok"><i class="fas fa-times"></i></span>
-                @endif
-              </div>
-            </div>
-          </div>
-        </li>
+        <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+          title="The service is running normally.">
+          <a href="{{ site.url }}" target="_blank">
         @else
-        <li class="list-group-item disabled">
+        <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
+          <div class="list-disabled-padding">
+        @endif
           <div class="container">
             <div class="row">
               <div class="col">
-                <a href="{{ site.url }}" class="disabled-link"><i class="fas fa-link"></i></a>
-                <span class="ml-3">{{ site.hostname }}</span>
+                {{ site.hostname }}
               </div>
               <div class="col-1">
                 @if(site.statusCode == 200)
@@ -93,8 +71,12 @@
               </div>
             </div>
           </div>
+          @if(site.statusCode != -1)
+          </a>
+          @else
+          </div>
+          @endif
         </li>
-        @endif
         @endeach
       </ul>
     </div>
@@ -103,30 +85,17 @@
       <ul class="list-group">
         @each(site in dev)
         @if(site.statusCode != -1)
-        <li class="list-group-item">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <a href="{{ site.url }}"><i class="fas fa-link"></i></a>
-                <span class="ml-3">{{ site.hostname }}</span>
-              </div>
-              <div class="col-1">
-                @if(site.statusCode == 200)
-                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
-                @else
-                <span class="status-color-nok"><i class="fas fa-times"></i></span>
-                @endif
-              </div>
-            </div>
-          </div>
-        </li>
+        <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+          title="The service is running normally.">
+          <a href="{{ site.url }}" target="_blank">
         @else
-        <li class="list-group-item disabled">
+        <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
+          <div class="list-disabled-padding">
+        @endif
           <div class="container">
             <div class="row">
               <div class="col">
-                <a href="{{ site.url }}" class="disabled-link"><i class="fas fa-link"></i></a>
-                <span class="ml-3">{{ site.hostname }}</span>
+                {{ site.hostname }}
               </div>
               <div class="col-1">
                 @if(site.statusCode == 200)
@@ -137,8 +106,12 @@
               </div>
             </div>
           </div>
+          @if(site.statusCode != -1)
+          </a>
+          @else
+          </div>
+          @endif
         </li>
-        @endif
         @endeach
       </ul>
     </div>
