@@ -15,9 +15,14 @@
       <ul class="list-group">
         @each(site in community)
         @if(site.statusCode != -1)
-        <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-          title="The service is running normally.">
-          <a href="{{ site.url }}" target="_blank">
+          @if(site.statusCode == 200)
+          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+            title="The service is functionning normally.">
+          @else
+          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+            title="The service is malfunctionning.">
+          @endif
+            <a href="{{ site.url }}" target="_blank">
         @else
         <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
           <div class="list-disabled-padding">
@@ -27,11 +32,11 @@
               <div class="col">
                 {{ site.hostname }}
               </div>
-              <div class="col-1">
+              <div class="col-2">
                 @if(site.statusCode == 200)
-                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                <div class="status-color-ok"><i class="fas fa-check"></i></div>
                 @else
-                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                <div class="status-color-nok"><i class="fas fa-times"></i></div>
                 @endif
               </div>
             </div>
@@ -50,9 +55,14 @@
       <ul class="list-group">
         @each(site in nest)
         @if(site.statusCode != -1)
-        <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-          title="The service is running normally.">
-          <a href="{{ site.url }}" target="_blank">
+          @if(site.statusCode == 200)
+          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+            title="The service is functionning normally.">
+          @else
+          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+            title="The service is malfunctionning.">
+          @endif
+            <a href="{{ site.url }}" target="_blank">
         @else
         <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
           <div class="list-disabled-padding">
@@ -62,11 +72,11 @@
               <div class="col">
                 {{ site.hostname }}
               </div>
-              <div class="col-1">
+              <div class="col-2">
                 @if(site.statusCode == 200)
-                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                <div class="status-color-ok"><i class="fas fa-check"></i></div>
                 @else
-                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                <div class="status-color-nok"><i class="fas fa-times"></i></div>
                 @endif
               </div>
             </div>
@@ -85,9 +95,14 @@
       <ul class="list-group">
         @each(site in dev)
         @if(site.statusCode != -1)
-        <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-          title="The service is running normally.">
-          <a href="{{ site.url }}" target="_blank">
+          @if(site.statusCode == 200)
+          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+            title="The service is functionning normally.">
+          @else
+          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
+            title="The service is malfunctionning.">
+          @endif
+            <a href="{{ site.url }}" target="_blank">
         @else
         <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
           <div class="list-disabled-padding">
@@ -97,11 +112,11 @@
               <div class="col">
                 {{ site.hostname }}
               </div>
-              <div class="col-1">
+              <div class="col-2">
                 @if(site.statusCode == 200)
-                <span class="status-color-ok"><i class="fas fa-check-square"></i></span>
+                <div class="status-color-ok"><i class="fas fa-check"></i></div>
                 @else
-                <span class="status-color-nok"><i class="fas fa-times"></i></span>
+                <div class="status-color-nok"><i class="fas fa-times"></i></div>
                 @endif
               </div>
             </div>

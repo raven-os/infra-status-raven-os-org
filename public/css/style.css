@@ -136,15 +136,23 @@ h3 {
 }
 
 .status-color-ok {
-  color: #a1cf6b;
-}
-
-.status-color-mok {
-  color: grey;
+  background-color: #a1cf6b;
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--primary);
+  text-align: center;
+  font-size: 0.75rem;
+  width: 30px;
 }
 
 .status-color-nok {
-  color: #d36a59;
+  background-color: #d36a59;
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--primary);
+  text-align: center;
+  font-size: 0.75rem;
+  width: 30px;
 }
 
 .disabled-link {
