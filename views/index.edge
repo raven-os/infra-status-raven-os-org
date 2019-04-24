@@ -14,39 +14,7 @@
       <h3>Community</h3>
       <ul class="list-group">
         @each(site in community)
-        @if(site.statusCode != -1)
-          @if(site.statusCode == 200)
-          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-            title="The service is functionning normally.">
-          @else
-          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-            title="The service is malfunctionning.">
-          @endif
-            <a href="{{ site.url }}" target="_blank">
-        @else
-        <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
-          <div class="list-disabled-padding">
-        @endif
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                {{ site.hostname }}
-              </div>
-              <div class="col-2">
-                @if(site.statusCode == 200)
-                <div class="status-color-ok"><i class="fas fa-check"></i></div>
-                @else
-                <div class="status-color-nok"><i class="fas fa-times"></i></div>
-                @endif
-              </div>
-            </div>
-          </div>
-          @if(site.statusCode != -1)
-          </a>
-          @else
-          </div>
-          @endif
-        </li>
+        @include('services')
         @endeach
       </ul>
     </div>
@@ -54,39 +22,7 @@
       <h3>Nest repositories</h3>
       <ul class="list-group">
         @each(site in nest)
-        @if(site.statusCode != -1)
-          @if(site.statusCode == 200)
-          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-            title="The service is functionning normally.">
-          @else
-          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-            title="The service is malfunctionning.">
-          @endif
-            <a href="{{ site.url }}" target="_blank">
-        @else
-        <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
-          <div class="list-disabled-padding">
-        @endif
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                {{ site.hostname }}
-              </div>
-              <div class="col-2">
-                @if(site.statusCode == 200)
-                <div class="status-color-ok"><i class="fas fa-check"></i></div>
-                @else
-                <div class="status-color-nok"><i class="fas fa-times"></i></div>
-                @endif
-              </div>
-            </div>
-          </div>
-          @if(site.statusCode != -1)
-          </a>
-          @else
-          </div>
-          @endif
-        </li>
+        @include('services')
         @endeach
       </ul>
     </div>
@@ -94,39 +30,7 @@
       <h3>Development</h3>
       <ul class="list-group">
         @each(site in dev)
-        @if(site.statusCode != -1)
-          @if(site.statusCode == 200)
-          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-            title="The service is functionning normally.">
-          @else
-          <li class="list-group-item bg-light-accent-hover" data-toggle="tooltip" data-placement="top"
-            title="The service is malfunctionning.">
-          @endif
-            <a href="{{ site.url }}" target="_blank">
-        @else
-        <li class="list-group-item disabled" data-toggle="tooltip" data-placement="top" title="The service is disabled.">
-          <div class="list-disabled-padding">
-        @endif
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                {{ site.hostname }}
-              </div>
-              <div class="col-2">
-                @if(site.statusCode == 200)
-                <div class="status-color-ok"><i class="fas fa-check"></i></div>
-                @else
-                <div class="status-color-nok"><i class="fas fa-times"></i></div>
-                @endif
-              </div>
-            </div>
-          </div>
-          @if(site.statusCode != -1)
-          </a>
-          @else
-          </div>
-          @endif
-        </li>
+        @include('services')
         @endeach
       </ul>
     </div>
