@@ -11,10 +11,10 @@ scOverride.checkSingleLink = function (linksArray, index, callBack, outputArray,
     originalLink = "";
   if (linksArray[index].indexOf('https://') === -1 && linksArray[index].indexOf('http://') === -1) {
     originalLink = linksArray[index];
-    linksArray[index] = "http://" + linksArray[index];
+    linksArray[index] = "https://" + linksArray[index];
     alterFlag = 1;
   }
-  if (linksArray[index].indexOf('https') == -1) {
+  if (linksArray[index].indexOf('https') === -1) {
     method = http;
   }
   method.get(linksArray[index], function (response) {
@@ -29,7 +29,7 @@ scOverride.checkSingleLink = function (linksArray, index, callBack, outputArray,
     if (alterFlag) {
       outputObject["alteredLink"] = linksArray[index];
     }
-    if (parseInt(outputObject["statusCode"] / 100) == 3 && typeof response.headers.location != "undefined") {
+    if (parseInt(outputObject["statusCode"] / 100) === 3 && typeof response.headers.location !== "undefined") {
       outputObject["redirectedTo"] = response.headers.location;
     }
     outputArray.push(outputObject);
@@ -54,7 +54,7 @@ scOverride.checkSingleLink = function (linksArray, index, callBack, outputArray,
     if (alterFlag) {
       outputObject["alteredLink"] = linksArray[index];
     }
-    if (parseInt(outputObject["statusCode"] / 100) == 3 && typeof response.headers.location != "undefined") {
+    if (parseInt(outputObject["statusCode"] / 100) === 3 && typeof response.headers.location !== "undefined") {
       outputObject["redirectedTo"] = response.headers.location;
     }
     outputArray.push(outputObject);
