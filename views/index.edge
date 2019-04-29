@@ -1,0 +1,40 @@
+@layout('layouts.app')
+
+@section('content')
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Raven infrastructure status</h1>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-lg-4">
+      <h3>Community</h3>
+      <ul class="list-group">
+        @each(site in community)
+        @include('services')
+        @endeach
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <h3>Nest repositories</h3>
+      <ul class="list-group">
+        @each(site in nest)
+        @include('services')
+        @endeach
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <h3>Development</h3>
+      <ul class="list-group">
+        @each(site in dev)
+        @include('services')
+        @endeach
+      </ul>
+    </div>
+  </div>
+</div>
+
+@endsection
