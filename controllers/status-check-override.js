@@ -14,7 +14,7 @@ scOverride.checkSingleLink = function (linksArray, index, callBack, outputArray,
     linksArray[index] = "https://" + linksArray[index];
     alterFlag = 1;
   }
-  if (linksArray[index].indexOf('https') === -1) {
+  if (linksArray[index].indexOf('http://') >= 0) {
     method = http;
   }
   method.get(linksArray[index], function (response) {
