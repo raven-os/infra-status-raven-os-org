@@ -18,9 +18,11 @@
           </div>
           <div class="col-2">
             @if(site.statusCode == 200)
-            <div class="status-color-ok"><i class="fas fa-check"></i></div>
+            <div class="status-icon-bg status-color-ok"><i class="fas fa-check status-icon"></i></div>
+            @elseif(site.statusCode == -1)
+            <div class="status-icon-bg status-color-mok"><i class="fas fa-minus status-icon"></i></div>
             @else
-            <div class="status-color-nok"><i class="fas fa-times"></i></div>
+            <div class="status-icon-bg status-color-nok"><i class="fas fa-times status-icon"></i></div>
             @endif
           </div>
         </div>
