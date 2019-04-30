@@ -135,28 +135,32 @@ h3 {
   }
 }
 
-.status-color-ok {
-  background-color: #a1cf6b;
+.status-icon-bg {
   padding: 3px;
   border-radius: 5px;
   color: var(--primary);
   text-align: center;
+  font-size: 0.5rem;
+  width: 19px;
+  height: 19px;
+  display: table;
+}
+
+.status-icon {
+  display: table-cell;
   vertical-align: middle;
-  font-size: 0.6rem;
-  width: 22px;
-  height: 22px;
+}
+
+.status-color-ok {
+  background-color: #a1cf6b;
 }
 
 .status-color-nok {
   background-color: #d36a59;
-  padding: 3px;
-  border-radius: 5px;
-  color: var(--primary);
-  text-align: center;
-  vertical-align: middle;
-  font-size: 0.6rem;
-  width: 22px;
-  height: 22px;
+}
+
+.status-color-mok {
+  background-color: #635c5b;
 }
 
 .disabled-link {
